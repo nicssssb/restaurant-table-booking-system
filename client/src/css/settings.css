@@ -1,0 +1,1609 @@
+/* =========================================================
+
+   AMORA DINING
+
+   SETTINGS PAGE
+
+========================================================= */
+
+
+
+.settings-page {
+
+    min-height: 100vh;
+
+    padding: 30px;
+
+    background: #f7f3ee;
+
+    color: #2d211b;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    box-sizing: border-box;
+
+}
+
+
+
+
+
+/* =========================================================
+
+   PAGE HEADER
+
+========================================================= */
+
+
+
+.settings-header {
+
+    width: 100%;
+
+    max-width: 1100px;
+
+    margin: 0 auto 26px;
+
+}
+
+
+
+.settings-header h1 {
+
+    margin: 0;
+
+    color: #2d211b;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 30px;
+
+    font-weight: 600;
+
+    letter-spacing: 0.2px;
+
+}
+
+
+
+.settings-header p {
+
+    margin: 6px 0 0;
+
+    color: #7b7069;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+
+}
+
+
+
+
+
+/* =========================================================
+
+   SETTINGS CONTAINER
+
+========================================================= */
+
+
+
+.settings-container {
+
+    width: 100%;
+
+    max-width: 1100px;
+
+    margin: 0 auto;
+
+}
+
+
+
+
+
+/* =========================================================
+
+   SETTINGS CARD
+
+========================================================= */
+
+
+
+.settings-card {
+
+    width: 100%;
+
+    padding: 25px;
+
+    margin-bottom: 20px;
+
+    box-sizing: border-box;
+
+
+
+    background: #ffffff;
+
+    border: 1px solid #ded4cc;
+
+    border-radius: 12px;
+
+
+
+    box-shadow:
+
+        0 2px 8px rgba(45, 33, 27, 0.04);
+
+}
+
+
+
+
+
+/* =========================================================
+
+   SETTINGS CARD HEADER
+
+========================================================= */
+
+
+
+.settings-card-header {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+
+
+    padding-bottom: 18px;
+
+    margin-bottom: 22px;
+
+
+
+    border-bottom: 1px solid #eee7e1;
+
+}
+
+
+
+.settings-card-header h2 {
+
+    margin: 0;
+
+
+
+    color: #2d211b;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 18px;
+
+    font-weight: 600;
+
+}
+
+
+
+.settings-card-header p {
+
+    margin: 4px 0 0;
+
+
+
+    color: #9a918b;
+
+    font-size: 12px;
+
+    line-height: 1.5;
+
+}
+
+
+
+
+
+/* =========================================================
+
+   SETTINGS ICON
+
+========================================================= */
+
+
+
+.settings-icon {
+
+    width: 43px;
+
+    height: 43px;
+
+
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+
+
+    flex-shrink: 0;
+
+
+
+    border-radius: 10px;
+
+
+
+    background: #eee4dc;
+
+    color: #8b5e3c;
+
+
+
+    font-size: 17px;
+
+}
+
+
+
+
+
+/* =========================================================
+
+   SETTINGS FORM GRID
+
+========================================================= */
+
+
+
+.settings-form-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 20px;
+
+}
+
+
+
+
+
+/* =========================================================
+
+   SETTINGS FORM GROUP
+
+   Scoped to prevent conflicts with form.css
+
+========================================================= */
+
+
+
+.settings-form-group {
+
+    display: flex;
+
+    flex-direction: column;
+
+    min-width: 0;
+
+}
+
+
+
+.settings-form-group label {
+
+    margin-bottom: 8px;
+
+
+
+    color: #3b2d25;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+}
+
+
+
+.settings-form-group input,
+
+.settings-form-group select,
+
+.settings-form-group textarea {
+
+    width: 100%;
+
+    box-sizing: border-box;
+
+
+
+    border: 1px solid #ded4cc;
+
+    border-radius: 9px;
+
+
+
+    outline: none;
+
+
+
+    background: #ffffff;
+
+    color: #2d211b;
+
+
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 14px;
+
+
+
+    transition:
+
+        border-color 0.2s ease,
+
+        box-shadow 0.2s ease,
+
+        background 0.2s ease;
+
+}
+
+
+
+
+
+/* =========================================================
+
+   INPUT
+
+========================================================= */
+
+
+
+.settings-form-group input,
+
+.settings-form-group select {
+
+    height: 46px;
+
+    padding: 0 13px;
+
+}
+
+
+
+
+
+/* =========================================================
+
+   TEXTAREA
+
+========================================================= */
+
+
+
+.settings-form-group textarea {
+
+    min-height: 105px;
+
+    padding: 12px 13px;
+
+
+
+    line-height: 1.5;
+
+    resize: vertical;
+
+}
+
+
+
+
+
+/* =========================================================
+
+   PLACEHOLDER
+
+========================================================= */
+
+
+
+.settings-form-group input::placeholder,
+
+.settings-form-group textarea::placeholder {
+
+    color: #aaa09a;
+
+}
+
+
+
+
+
+/* =========================================================
+
+   INPUT HOVER
+
+========================================================= */
+
+
+
+.settings-form-group input:hover,
+
+.settings-form-group select:hover,
+
+.settings-form-group textarea:hover {
+
+    border-color: #c8b9ae;
+
+}
+
+
+
+
+
+/* =========================================================
+
+   INPUT FOCUS
+
+========================================================= */
+
+
+
+.settings-form-group input:focus,
+
+.settings-form-group select:focus,
+
+.settings-form-group textarea:focus {
+
+    border-color: #8b5e3c;
+
+
+
+    box-shadow:
+
+        0 0 0 3px rgba(139, 94, 60, 0.10);
+
+}
+
+
+
+
+
+/* =========================================================
+
+   READ ONLY
+
+========================================================= */
+
+
+
+.settings-form-group input:read-only {
+
+    background: #f8f5f2;
+
+    color: #7b7069;
+
+    cursor: default;
+
+}
+
+
+
+
+
+/* =========================================================
+
+   DISABLED
+
+========================================================= */
+
+
+
+.settings-form-group input:disabled,
+
+.settings-form-group select:disabled,
+
+.settings-form-group textarea:disabled {
+
+    background: #f3f0ed;
+
+    color: #9a918b;
+
+    cursor: not-allowed;
+
+}
+
+
+
+
+
+/* =========================================================
+
+   REQUIRED FIELD
+
+========================================================= */
+
+
+
+.settings-required {
+
+    color: #c0392b;
+
+}
+
+
+
+
+
+/* =========================================================
+
+   ERROR MESSAGE
+
+========================================================= */
+
+
+
+.settings-error {
+
+    display: block;
+
+    margin-top: 6px;
+
+
+
+    color: #d9534f;
+
+    font-size: 12px;
+
+    line-height: 1.4;
+
+}
+
+
+
+
+
+/* =========================================================
+
+   SAVE BUTTON
+
+========================================================= */
+
+
+
+.settings-save-btn {
+
+    height: 44px;
+
+
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+
+
+    margin-top: 22px;
+
+    padding: 0 20px;
+
+
+
+    border: 1px solid #8b5e3c;
+
+    border-radius: 9px;
+
+
+
+    background: #8b5e3c;
+
+    color: #ffffff;
+
+
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+
+
+    cursor: pointer;
+
+
+
+    transition:
+
+        background 0.2s ease,
+
+        border-color 0.2s ease,
+
+        transform 0.2s ease,
+
+        box-shadow 0.2s ease;
+
+}
+
+
+
+.settings-save-btn:hover {
+
+    background: #714a2f;
+
+    border-color: #714a2f;
+
+
+
+    transform: translateY(-1px);
+
+
+
+    box-shadow:
+
+        0 5px 14px rgba(139, 94, 60, 0.18);
+
+}
+
+
+
+.settings-save-btn:active {
+
+    transform: translateY(0);
+
+}
+
+
+
+.settings-save-btn:disabled {
+
+    opacity: 0.6;
+
+    cursor: not-allowed;
+
+
+
+    transform: none;
+
+    box-shadow: none;
+
+}
+
+
+
+
+
+/* =========================================================
+
+   BUTTON ICON
+
+========================================================= */
+
+
+
+.settings-save-btn svg {
+
+    font-size: 13px;
+
+}
+
+
+
+
+
+/* =========================================================
+
+   SETTINGS OPTIONS
+
+========================================================= */
+
+
+
+.settings-options {
+
+    display: flex;
+
+    flex-direction: column;
+
+}
+
+
+
+
+
+/* =========================================================
+
+   SETTINGS OPTION
+
+========================================================= */
+
+
+
+.settings-option {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+
+
+    gap: 20px;
+
+
+
+    padding: 17px 0;
+
+
+
+    border-top: 1px solid #eee7e1;
+
+}
+
+
+
+.settings-option:first-child {
+
+    border-top: none;
+
+    padding-top: 0;
+
+}
+
+
+
+.settings-option:last-child {
+
+    padding-bottom: 0;
+
+}
+
+
+
+
+
+/* =========================================================
+
+   OPTION TEXT
+
+========================================================= */
+
+
+
+.settings-option-info {
+
+    min-width: 0;
+
+}
+
+
+
+.settings-option-info strong {
+
+    display: block;
+
+
+
+    margin-bottom: 4px;
+
+
+
+    color: #3b2d25;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+}
+
+
+
+.settings-option-info span {
+
+    display: block;
+
+
+
+    color: #7b7069;
+
+    font-size: 12px;
+
+    line-height: 1.5;
+
+}
+
+
+
+
+
+/* =========================================================
+
+   SWITCH
+
+========================================================= */
+
+
+
+.switch {
+
+    position: relative;
+
+
+
+    width: 48px;
+
+    height: 25px;
+
+
+
+    flex-shrink: 0;
+
+}
+
+
+
+
+
+/* Hide checkbox */
+
+
+
+.switch input {
+
+    position: absolute;
+
+
+
+    width: 0;
+
+    height: 0;
+
+
+
+    opacity: 0;
+
+}
+
+
+
+
+
+/* Slider */
+
+
+
+.slider {
+
+    position: absolute;
+
+    inset: 0;
+
+
+
+    background: #d1d5db;
+
+
+
+    border-radius: 20px;
+
+
+
+    cursor: pointer;
+
+
+
+    transition:
+
+        background 0.2s ease;
+
+}
+
+
+
+
+
+/* Slider circle */
+
+
+
+.slider::before {
+
+    content: "";
+
+
+
+    position: absolute;
+
+
+
+    width: 19px;
+
+    height: 19px;
+
+
+
+    left: 3px;
+
+    top: 3px;
+
+
+
+    background: #ffffff;
+
+
+
+    border-radius: 50%;
+
+
+
+    box-shadow:
+
+        0 1px 3px rgba(0, 0, 0, 0.15);
+
+
+
+    transition:
+
+        transform 0.2s ease;
+
+}
+
+
+
+
+
+/* Checked */
+
+
+
+.switch input:checked + .slider {
+
+    background: #8b5e3c;
+
+}
+
+
+
+.switch input:checked + .slider::before {
+
+    transform: translateX(23px);
+
+}
+
+
+
+
+
+/* Keyboard focus */
+
+
+
+.switch input:focus-visible + .slider {
+
+    box-shadow:
+
+        0 0 0 3px rgba(139, 94, 60, 0.15);
+
+}
+
+
+
+
+
+/* =========================================================
+
+   DANGER / LOGOUT OPTION
+
+========================================================= */
+
+
+
+.settings-danger {
+
+    border-color: #f0d6d2;
+
+    background: #fffafa;
+
+}
+
+
+
+.settings-danger .settings-icon {
+
+    background: #fbe9e7;
+
+    color: #c0392b;
+
+}
+
+
+
+.settings-danger h2 {
+
+    color: #8f2d24;
+
+}
+
+
+
+
+
+/* =========================================================
+
+   DANGER BUTTON
+
+========================================================= */
+
+
+
+.settings-danger-btn {
+
+    height: 42px;
+
+
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+
+
+    padding: 0 17px;
+
+
+
+    border: 1px solid #e1b8b2;
+
+    border-radius: 8px;
+
+
+
+    background: #ffffff;
+
+    color: #b23a2f;
+
+
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+
+
+    cursor: pointer;
+
+
+
+    transition:
+
+        background 0.2s ease,
+
+        border-color 0.2s ease,
+
+        color 0.2s ease;
+
+}
+
+
+
+.settings-danger-btn:hover {
+
+    background: #fdf0ee;
+
+    border-color: #d99b94;
+
+    color: #922d25;
+
+}
+
+
+
+
+
+/* =========================================================
+
+   SETTINGS DIVIDER
+
+========================================================= */
+
+
+
+.settings-divider {
+
+    width: 100%;
+
+    height: 1px;
+
+
+
+    margin: 22px 0;
+
+
+
+    background: #eee7e1;
+
+}
+
+
+
+
+
+/* =========================================================
+
+   SUCCESS MESSAGE
+
+========================================================= */
+
+
+
+.settings-success {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+
+
+    padding: 11px 13px;
+
+    margin-top: 15px;
+
+
+
+    border: 1px solid #d9eadf;
+
+    border-radius: 8px;
+
+
+
+    background: #f2faf5;
+
+    color: #2f6f49;
+
+
+
+    font-size: 12px;
+
+}
+
+
+
+
+
+/* =========================================================
+
+   RESPONSIVE — TABLET
+
+========================================================= */
+
+
+
+@media (max-width: 900px) {
+
+
+
+    .settings-page {
+
+        padding: 24px;
+
+    }
+
+
+
+    .settings-form-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+
+    .settings-card {
+
+        padding: 22px;
+
+    }
+
+}
+
+
+
+
+
+/* =========================================================
+
+   RESPONSIVE — MOBILE
+
+========================================================= */
+
+
+
+@media (max-width: 600px) {
+
+
+
+    .settings-page {
+
+        padding: 17px;
+
+    }
+
+
+
+    .settings-header {
+
+        margin-bottom: 20px;
+
+    }
+
+
+
+    .settings-header h1 {
+
+        font-size: 25px;
+
+    }
+
+
+
+    .settings-header p {
+
+        font-size: 13px;
+
+    }
+
+
+
+    .settings-card {
+
+        padding: 18px;
+
+        border-radius: 10px;
+
+    }
+
+
+
+    .settings-card-header {
+
+        gap: 10px;
+
+        padding-bottom: 15px;
+
+        margin-bottom: 18px;
+
+    }
+
+
+
+    .settings-icon {
+
+        width: 38px;
+
+        height: 38px;
+
+        border-radius: 8px;
+
+        font-size: 15px;
+
+    }
+
+
+
+    .settings-card-header h2 {
+
+        font-size: 16px;
+
+    }
+
+
+
+    .settings-card-header p {
+
+        font-size: 11px;
+
+    }
+
+
+
+    .settings-form-grid {
+
+        gap: 16px;
+
+    }
+
+
+
+    .settings-option {
+
+        align-items: flex-start;
+
+        gap: 15px;
+
+    }
+
+
+
+    .settings-save-btn {
+
+        width: 100%;
+
+    }
+
+}
+
+
+
+
+
+/* =========================================================
+
+   RESPONSIVE — SMALL MOBILE
+
+========================================================= */
+
+
+
+@media (max-width: 400px) {
+
+
+
+    .settings-page {
+
+        padding: 13px;
+
+    }
+
+
+
+    .settings-card {
+
+        padding: 15px;
+
+    }
+
+
+
+    .settings-header h1 {
+
+        font-size: 23px;
+
+    }
+
+
+
+    .settings-card-header h2 {
+
+        font-size: 15px;
+
+    }
+
+
+
+    .settings-option {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+    }
+
+
+
+    .switch {
+
+        margin-top: 3px;
+
+    }
+
+}
+
+
+
+/* =========================================================
+
+   AMORA DINING — SETTINGS PAGE
+
+   FIVE-STAR RESTAURANT SYSTEM THEME
+
+   Add this AFTER your existing Settings CSS.
+
+   Existing class names and functionality are preserved.
+
+========================================================= */
+
+
+
+:root {
+
+    --amora-settings-ivory: #f5f1e9;
+
+    --amora-settings-paper: #fffdf9;
+
+    --amora-settings-charcoal: #211d18;
+
+    --amora-settings-charcoal-soft: #302922;
+
+    --amora-settings-gold: #c8a96b;
+
+    --amora-settings-gold-dark: #9f7d42;
+
+    --amora-settings-gold-soft: #efe3c9;
+
+    --amora-settings-border: #e5dccd;
+
+    --amora-settings-muted: #8c8176;
+
+    --amora-settings-shadow: 0 12px 35px rgba(48, 39, 30, 0.08);
+
+}
+
+
+
+/* Page background and heading */
+
+.settings-page {
+
+    background:
+
+        radial-gradient(circle at top right, rgba(200, 169, 107, 0.09), transparent 30%),
+
+        linear-gradient(135deg, #f7f3eb 0%, #f1ede5 100%);
+
+    color: var(--amora-settings-charcoal);
+
+}
+
+
+
+.settings-header h1,
+
+.settings-card-header h2 {
+
+    color: var(--amora-settings-charcoal);
+
+    font-family: Georgia, "Times New Roman", serif;
+
+}
+
+
+
+.settings-header h1 {
+
+    font-size: 32px;
+
+    letter-spacing: -0.3px;
+
+}
+
+
+
+.settings-header h1::after {
+
+    content: "";
+
+    display: block;
+
+    width: 43px;
+
+    height: 2px;
+
+    margin-top: 10px;
+
+    background: var(--amora-settings-gold);
+
+}
+
+
+
+.settings-header p,
+
+.settings-card-header p {
+
+    color: var(--amora-settings-muted);
+
+}
+
+
+
+/* Cards */
+
+.settings-card {
+
+    background: rgba(255, 253, 249, 0.97);
+
+    border: 1px solid var(--amora-settings-border);
+
+    border-radius: 9px;
+
+    box-shadow: var(--amora-settings-shadow);
+
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+
+}
+
+
+
+.settings-card:hover {
+
+    border-color: #d8c8aa;
+
+    box-shadow: 0 15px 38px rgba(48, 39, 30, 0.09);
+
+}
+
+
+
+.settings-card-header {
+
+    border-bottom-color: #e9e0d2;
+
+}
+
+
+
+.settings-icon {
+
+    background: #f1e6d0;
+
+    color: var(--amora-settings-gold-dark);
+
+    border: 1px solid #e2d0aa;
+
+    border-radius: 50%;
+
+}
+
+
+
+.settings-form-group label {
+
+    color: var(--amora-settings-charcoal-soft);
+
+    letter-spacing: 0.1px;
+
+}
+
+
+
+/* Inputs */
+
+.settings-form-group input,
+
+.settings-form-group select,
+
+.settings-form-group textarea {
+
+    border-color: #ddd3c4;
+
+    border-radius: 6px;
+
+    background: #fffdf9;
+
+    color: var(--amora-settings-charcoal);
+
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+
+}
+
+

@@ -1,0 +1,287 @@
+:root {
+    --sidebar-width: 280px;
+    --sidebar-bg: #123c2d;
+    --sidebar-bg-deep: #0b2e22;
+    --sidebar-accent: #f4b942;
+    --sidebar-text: #f8fafc;
+    --sidebar-muted: #b8cec5;
+    --sidebar-border: rgba(255, 255, 255, 0.1);
+}
+
+.admin-sidebar, .admin-sidebar * { box-sizing: border-box; }
+
+.admin-sidebar {
+    position: fixed;
+    inset: 0 auto 0 0;
+    z-index: 1000;
+    display: flex;
+    width: var(--sidebar-width);
+    min-height: 100dvh;
+    flex-direction: column;
+    overflow: hidden;
+    color: var(--sidebar-text);
+    background: radial-gradient(circle at 0 0, rgba(244,185,66,.12), transparent 34%),
+        linear-gradient(180deg, var(--sidebar-bg), var(--sidebar-bg-deep));
+    border-right: 1px solid var(--sidebar-border);
+    box-shadow: 8px 0 30px rgba(15, 23, 42, 0.12);
+}
+
+/* Keep this drawer above the page overlay, even when admin.css has
+   older sidebar rules using the same class name. */
+#admin-navigation.admin-sidebar {
+    z-index: 2100;
+}
+
+.sidebar-logo {
+    display: flex;
+    min-height: 104px;
+    align-items: center;
+    gap: 14px;
+    padding: 24px 22px;
+    border-bottom: 1px solid var(--sidebar-border);
+}
+
+.logo-icon {
+    display: grid;
+    width: 46px;
+    height: 46px;
+    flex: 0 0 46px;
+    place-items: center;
+    color: #173e30;
+    font-size: 20px;
+    background: linear-gradient(135deg, #ffd978, var(--sidebar-accent));
+    border-radius: 14px;
+    box-shadow: 0 8px 20px rgba(244, 185, 66, 0.22);
+}
+
+.logo-copy { min-width: 0; }
+.logo-copy h2 { margin: 0; font-size: 18px; font-weight: 750; line-height: 1.2; }
+.logo-copy span {
+    display: block;
+    margin-top: 4px;
+    overflow: hidden;
+    color: var(--sidebar-muted);
+    font-size: 12px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.sidebar-nav {
+    flex: 1;
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding: 20px 14px;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255,255,255,.2) transparent;
+}
+
+.sidebar-title {
+    margin: 0 10px 9px;
+    color: #8fb0a3;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+}
+
+.settings-title { margin-top: 27px; }
+
+.sidebar-link {
+    position: relative;
+    display: flex;
+    min-height: 48px;
+    align-items: center;
+    gap: 13px;
+    margin-bottom: 5px;
+    padding: 11px 13px;
+    color: #dbe9e3;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    border: 1px solid transparent;
+    border-radius: 12px;
+    transition: 160ms ease;
+}
+
+.sidebar-link:hover {
+    color: #fff;
+    background: rgba(255,255,255,.08);
+    transform: translateX(2px);
+}
+
+.sidebar-link.active {
+    color: #fff;
+    background: rgba(255,255,255,.12);
+    border-color: rgba(255,255,255,.08);
+    box-shadow: 0 8px 22px rgba(3,19,13,.16);
+}
+
+.sidebar-link.active::before {
+    position: absolute;
+    top: 11px;
+    bottom: 11px;
+    left: -4px;
+    width: 4px;
+    content: "";
+    background: var(--sidebar-accent);
+    border-radius: 0 5px 5px 0;
+}
+
+.sidebar-icon {
+    display: grid;
+    width: 23px;
+    flex: 0 0 23px;
+    place-items: center;
+    color: #a7c6ba;
+    font-size: 17px;
+}
+
+.sidebar-link.active .sidebar-icon { color: var(--sidebar-accent); }
+
+.sidebar-bottom {
+    padding: 16px 14px max(18px, env(safe-area-inset-bottom));
+    border-top: 1px solid var(--sidebar-border);
+}
+
+.logout-button {
+    display: flex;
+    width: 100%;
+    min-height: 48px;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 11px 16px;
+    color: #ffe4e6;
+    font: inherit;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    background: rgba(220,38,38,.1);
+    border: 1px solid rgba(254,202,202,.15);
+    border-radius: 12px;
+    transition: 160ms ease;
+}
+
+.logout-button:hover {
+    background: rgba(220,38,38,.2);
+    border-color: rgba(254,202,202,.28);
+    transform: translateY(-1px);
+}
+
+.sidebar-link:focus-visible, .logout-button:focus-visible,
+.sidebar-toggle:focus-visible, .sidebar-close:focus-visible {
+    outline: 3px solid rgba(244,185,66,.65);
+    outline-offset: 2px;
+}
+
+.sidebar-toggle, .sidebar-close, .sidebar-overlay { display: none; }
+
+@media (max-width: 900px) {
+    body.sidebar-open { overflow: hidden; }
+
+    #admin-navigation.admin-sidebar {
+        inset: 0 auto 0 0;
+        width: min(86vw, 300px) !important;
+        min-width: min(86vw, 300px) !important;
+        max-width: 300px !important;
+        height: 100dvh;
+        transform: translateX(-105%) !important;
+        visibility: hidden !important;
+        transition: transform 240ms ease, visibility 240ms;
+    }
+
+    #admin-navigation.admin-sidebar.open {
+        transform: translateX(0) !important;
+        visibility: visible !important;
+    }
+
+    /* Override old icon-only/collapsed sidebar rules from admin.css. */
+    #admin-navigation .logo-copy,
+    #admin-navigation .sidebar-title,
+    #admin-navigation .sidebar-link > span:not(.sidebar-icon),
+    #admin-navigation .logout-button > span {
+        display: block !important;
+        width: auto !important;
+        overflow: visible !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        transform: none !important;
+    }
+
+    #admin-navigation .sidebar-link {
+        justify-content: flex-start !important;
+        gap: 13px !important;
+        padding: 11px 13px !important;
+        font-size: 14px !important;
+    }
+
+    #admin-navigation .sidebar-icon {
+        display: grid !important;
+        width: 23px !important;
+        flex: 0 0 23px !important;
+    }
+
+    #admin-navigation .logout-button {
+        display: flex !important;
+        gap: 10px !important;
+    }
+
+    .sidebar-toggle {
+        position: fixed;
+        top: max(16px, env(safe-area-inset-top));
+        left: 16px;
+        z-index: 1900;
+        display: grid;
+        width: 46px;
+        height: 46px;
+        place-items: center;
+        color: #fff;
+        font-size: 19px;
+        cursor: pointer;
+        background: var(--sidebar-bg);
+        border: 0;
+        border-radius: 13px;
+        box-shadow: 0 8px 24px rgba(15,23,42,.24);
+    }
+
+    .sidebar-close {
+        display: grid;
+        width: 38px;
+        height: 38px;
+        margin-left: auto;
+        flex: 0 0 38px;
+        place-items: center;
+        color: var(--sidebar-muted);
+        font-size: 17px;
+        cursor: pointer;
+        background: rgba(255,255,255,.07);
+        border: 1px solid var(--sidebar-border);
+        border-radius: 11px;
+    }
+
+    .sidebar-overlay {
+        position: fixed;
+        inset: 0;
+        z-index: 2000 !important;
+        display: block;
+        padding: 0;
+        pointer-events: none;
+        cursor: pointer;
+        background: rgba(2,12,8,.58);
+        border: 0;
+        opacity: 0;
+        backdrop-filter: blur(3px);
+        transition: opacity 220ms ease;
+    }
+
+    .sidebar-overlay.visible { pointer-events: auto; opacity: 1; }
+}
+
+@media (max-width: 420px) {
+    .sidebar-logo { min-height: 92px; padding: 19px 17px; }
+    .sidebar-nav { padding-inline: 10px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .admin-sidebar, .sidebar-overlay, .sidebar-link, .logout-button { transition: none; }
+}
